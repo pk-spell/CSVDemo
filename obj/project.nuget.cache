@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "J20N38l1Ym79b0F2aa3PPH4c9BLPtlcNmmbOBsS+ErgY50thF97S842vtRE8uF74uJFbhQXtKmaCPE0HGgaoww==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Marscel Stakor\\Desktop\\vs repos\\CSVReadDemo\\CSVReadDemo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Marscel Stakor\\.nuget\\packages\\csvhelper\\22.1.1\\csvhelper.22.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
