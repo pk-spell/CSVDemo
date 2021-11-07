@@ -4,6 +4,8 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using CsvHelper.Configuration;
+using System.Reflection;
+using System.Data;
 
 namespace CSVReadDemo
 {
@@ -53,6 +55,26 @@ namespace CSVReadDemo
                     Console.ReadKey();
                 }
             }
+
+            public class ListToDataTable
+        {
+            public ListToDataTable ToDataTable()
+            {
+                ListToDataTable dataTable = new DataTable(typeof(T).Name);
+                //Get all the properties by using reflection
+                PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+                foreach (T item in items)
+                {
+                    var values = new object[Props.Length];
+                    for(int i=0; i < Props.Length; i++)
+                    {
+                        values[i] = Props[i].GetValue(item, null);
+                    }
+                    dataTable.Rows.Add(values);
+                }
+                return dataTable;
+            }
+        }
 
 
                     //foreach (var record in records)
